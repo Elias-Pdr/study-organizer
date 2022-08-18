@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Organizer</title>
+    <style>
+        *{
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body, html{
+            background-color: #5ebb1e;
+            width: 100%;
+            height: 100%;
+            position: fixed;
+        }
+        header{
+            background-color: #303233;
+            height: 14vh;
+            display: flex;
+            align-items: center;
+        }
+        header span{
+            display: flex;
+            padding: 20px;
+            margin-left: 30px;
+        }
+        header h1:nth-child(1){
+            color: #5ebb1e;
+            margin-right: 10px;
+            font-weight: bolder;
+
+        }
+        header h1:nth-child(2){
+            color: white;
+            font-weight: lighter;
+        }
+        main{
+            display: flex;
+            height: 100%;
+            background-color: purple;
+        }
+        
+        .containerLeft{
+            background-color: #303233;
+            width: 36%;
+            
+
+        }
+        .scroll{
+            overflow-y: scroll;
+            height: 90vh;
+        }
+        ::-webkit-scrollbar,
+        ::-webkit-scrollbar-track,
+        ::-webkit-scrollbar-thumb {
+            border-radius: 0px;
+            width: 0px;
+        }
+
+        .containerLeft p:nth-child(1){
+            background-color: #474b4d;
+            border-bottom: 1px solid #474b4d;
+            color: rgba(240, 248, 255, 0.753);
+            font-weight: 100;
+            padding: 16px 20px;
+        }
+
+        .containerLeft p{
+            background-color: none;
+            border-bottom: 1px solid #474b4d;
+            color: rgba(240, 248, 255, 0.753);
+            font-weight: 100;
+            padding: 16px 20px;
+        }
+
+        .containerRight{
+            background-color: #171818;
+            width: 100%;
+            padding: 10px 30px;
+            height: 100%;
+
+        }
+        .containerNumTask{
+            display: flex;    
+            justify-content: space-between;
+        }
+        .numTask{
+            background-color: #303233;
+            color: aliceblue;
+            padding: 14px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            width: 100%;
+            margin: 0px 10px;
+
+        }
+        .numTask input{
+            width: 100%;
+            margin: 0px 10px;
+            border: none;
+            background: none;
+            color: aliceblue;
+            outline: none;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .containerNumTask p{
+            margin-left: 10px;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        .containerInput{
+            display: flex;
+            margin: 30px 0px;
+        }
+        .containerInput input{
+            background-color: #303233;
+            border: none;
+            color: aliceblue;
+            width: 100%;
+            border-radius: 20px 0px 0px 20px;
+            padding: 20px;
+            font-size: 1.2em;
+            outline: none;
+        }
+        .containerInput button{
+            background-color: #5ebb1e;
+            border: none;
+            color: aliceblue;
+            width: 100px;
+            height: 80px;
+            border-radius: 0px 20px 20px 0px;
+            font-size: 1.3em;
+
+
+        }
+
+        .containerTaskAtual{
+            border: 3px dashed rgba(192, 192, 192, 0.521);
+            font-size: 1.3em;
+            text-align: center;
+            letter-spacing: 2px;
+            font-weight: lighter;
+            font-variant: small-caps;
+            color: rgba(192, 192, 192, 0.781);
+            padding: 40px;
+            margin: 30px 0px;
+        }
+        .containerFooter{
+            height: 80%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        footer{
+            margin: auto;
+            width: 100%;
+        }
+        footer div{
+            color: aliceblue;
+        }
+        footer p{
+            margin: 12px;
+            text-align: center;
+        }
+</style>
+</head>
+<body>
+    <header>
+        <span>
+            <h1>Study</h1>
+            <h1>Organizer</h1>
+        </span>
+    </header>
+
+    <main>
+        <div class="containerLeft">
+            <div class="scroll"><p id="lista"> fé </p></div>
+        </div>
+        <div class="containerRight">
+            <div class="containerNumTask">
+                <div class="numTask">
+                    <input type="number" name="" id="minRandom" value="0">
+                    a
+                    <input type="number" name="" id="maxRandom" oninput="saveMax()">
+                </div>
+                <div onclick="random()" class="numTask" style="cursor: pointer;">Sortear task</div>
+                <div class="numTask">Task sorteada: <p id="res">0</p></div>
+            </div>
+            <div class="containerInput">
+                <input type="text" name="inputTask" id="inputTask" placeholder="Adicionar uma nova task...">
+                <button onclick="enterText()">Add</button>
+            </div>
+            <div class="containerFooter">
+                <div class="containerTaskAtual">
+                    <div class="borda">
+                        <p id="displayTxt">Terminar a plataforma de foco</p>
+                    </div>
+                </div>
+                <footer>
+                    <div>
+                        <p>Termos de serviço | Politica de Privaciade</p>
+                        <p>@ 2022 Rainberry Inc.</p>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </main>
+
+
+
+
+    <script src="lista.js"></script>
+</body>
+</html>

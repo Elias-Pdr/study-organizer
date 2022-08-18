@@ -1,0 +1,8 @@
+    <main>
+        <p id="lista"></p>  
+        <p id="res"></p>
+        <input type="text" name="inputTask" id="inputTask">
+        <button onclick="enterText()">ok</button>
+        <button onclick="random()">random</button>
+
+    </main>
